@@ -34,7 +34,7 @@ class MinerSession:
     def start_axon(self):
         wallet, metagraph, subtensor = self.unpack_bt_objects()
 
-        axon = bt.axon( wallet = wallet, port = self.config.axon.port )
+        axon = bt.axon( wallet = wallet, config = self.config )
         bt.logging.info(f"Axon {axon}")
 
         # Attach determiners which functions are called when servicing a request.
